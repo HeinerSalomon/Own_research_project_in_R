@@ -13,23 +13,15 @@ In this course students are encouraged to run their own small-scale analysis pro
 
 ## Assessment
 
-Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. Both assessments include the simple progress report every two weeks and the final script of the project. Beyond that, the two different
+Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include the **simple progress report every two weeks** and the **final script** of the project. Beyond that, the two different levels encompass the following two assessments:
 
 3 CP:
-
--   Simple informal progress reports every two weeks
-
--   Script of project
 
 -   Short presentation (10 minutes)
 
 -   Short final research note with references (\~5 pages, at least one high-quality graph)
 
 6 CP:
-
--   Simple informal progress reports every two weeks
-
--   Script of project
 
 -   Long presentation (20 minutes)
 
