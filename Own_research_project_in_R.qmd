@@ -7,13 +7,13 @@ title: "Sallybus: Creating your own (quantitative) research project in R"
 
 ## Introduction
 
-This course wants to enable students to run their own (quantitative) research project in R. In the process, they will learn basic data wrangling and data visualisation in R. Every student will choose a project that they want to conduct using publicly available data of their choosing (some examples will be provided) and will, in consultation with the course coordinator, work towards a project report at the end of the course that they will present to the other students. Students will analyse their data in the open-source programme R and will be encouraged to write their final reports in it, too. The course will be a mixture of lectures on practical issues and a project based working sessions in exchange with the course coordinator and other students to make use of peer-to-peer learning. Students will be asked to write down and track their progress in an unstructured form (just one paragraph, including reasons for no progress, which will always happen, is no problem and part of the process) and submit it every two weeks.
+This course wants to enable students to run their own (quantitative) research project in R. In the process, they will learn basic data wrangling and data visualisation in R. Every student will choose a project that they want to conduct using publicly available data of their choosing (some examples will be provided) and will, in consultation with the course coordinator, work towards a project report at the end of the course that they will present to the other students. Students will analyse their data in the open-source programme R and will be encouraged to write their final reports in it, too. The course will be a mixture of lectures on practical issues and a project based working sessions in exchange with the course coordinator and other students to make use of peer-to-peer learning. The lecture will be tailored to the needs and levels of the participating students.
 
 In this course students are encouraged to run their own small-scale analysis project using R from beginning to end: choosing a topic and research question they find interesting, selecting and downloading the relevant data, using simple (presumably mostly) descriptive statistics such as means, and writing a report about their findings. They will be encouraged to use Quarto/ Rmarkdown, the integrated tool within R-Studio, to write their final reports and export them into PDF to automatically integrate updated findings. Also, students will be encouraged to upload and maintain their project on git. This course teaches practical skills and combines it with theoretical grounding in reproducible science. Hence it can be used as a good foundation for quantitative bachelor or master theses, and to learn skills that can be used also outside of academia.
 
 ## Assessment
 
-Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include the **simple progress report every two weeks** and the **final script** of the project. Beyond that, the two different levels encompass the following two assessments:
+Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include the **simple progress report every two weeks** (just about one paragraph in an unstructured form, including reasons for no progress, which will always happen, is no problem and part of the process) and the **final script** of the project. Beyond that, the two different levels encompass the following two assessments:
 
 3 CP:
 
@@ -40,3 +40,9 @@ Students can take the course for 3 CP or 6 CP. The final assessment will depend 
 Time: Monday 14:00 - 16:00 (preliminary)
 
 Location: Socium, 3.3390 (preliminary)
+
+## Instructor
+
+Heiner Salomon
+
+heiner.salomon\@uni-bremen.de
