@@ -1,9 +1,13 @@
 ---
-title: "Sallybus: Creating your own (quantitative) research project in R"
-#format: 
-#  pdf:
-#    bibliography:
+title: "Syllabus: Creating your own (quantitative) research project in R"
+format:
+  pdf:
+    suppress-bibliography: true
 ---
+
+Version: 1
+
+You can find the latest version of the syllabus on the project [here](https://github.com/HeinerSalomon/Own_research_project_in_R).
 
 ## Introduction
 
@@ -15,13 +19,13 @@ In this course students are encouraged to run their own small-scale analysis pro
 
 Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include the **simple progress report every two weeks** (just about one paragraph in an unstructured form, including reasons for no progress, which will always happen, is no problem and part of the process) and the **final script** of the project. Beyond that, the two different levels encompass the following two assessments:
 
-3 CP:
+3 Credit Points (CP):
 
 -   Short presentation (10 minutes)
 
 -   Short final research note with references (\~5 pages, at least one high-quality graph)
 
-6 CP:
+6 Credit Points (CP):
 
 -   Long presentation (20 minutes)
 
@@ -37,12 +41,62 @@ Students can take the course for 3 CP or 6 CP. The final assessment will depend 
 
 ## Time and Location
 
-Time: Monday 14:00 - 16:00 (preliminary)
+Time: Monday 14:00 - 16:00
 
-Location: Socium, 3.3390 (preliminary)
+Location: Socium, Mary-Somerville-Str. 3, Room 3.3390
+
+## Course schedule (preliminary)
+
+This is the preliminary course schedule. It may change based on student demand.
+
+~~April 6th:~~ Easter
+
+April 13th: Introduction and installing R and Rstudio, Quarto and Github
+
+[April 20th]{.underline}: Choosing a research project
+
+April 27th: (Short) introduction to Rstudio and Quarto
+
+[May 4th]{.underline}: Reproducible science (and git)
+
+May 11th: The tidyverse: What is it and how can you use it?
+
+[May 18th]{.underline}: Good practices when coding
+
+~~May 25th:~~ Whit Monday
+
+[June 1st]{.underline}: Crash course in data wrangling
+
+June 8th: Introduction to data visualisation in ggplot
+
+[June 15th]{.underline}: More data visualisation in ggplot
+
+June 22nd: Presentations
+
+[June 29th]{.underline}: Presentations
+
+July 6th: Final class
+
+Notes:
+
+The ~~struck through~~ lessons are missing due to holidays.
+
+The [underlined]{.underline} lessons are weeks with progress reports due.
 
 ## Instructor
 
 Heiner Salomon
 
 heiner.salomon\@uni-bremen.de
+
+Office: 5.4010 (floor above the seminar room)
+
+Office days: Monday and Wednesday
+
+## Inspiration:
+
+-   Gentzkow, M. and Shapiro, JM. (2014): Code and Data for the Social Sciences: A Practitioner’s Guide <https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf>
+
+-   Munafò, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, et al. ‘A Manifesto for Reproducible Science’. Nature Human Behaviour 1, no. 1 (2017): 0021. <https://doi.org/10.1038/s41562-016-0021>.
+
+-   Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. ‘Introduction’. In R for Data Science, 2nd Edition, Second edition. O’Reilley, <https://r4ds.hadley.nz/intro.html>.
