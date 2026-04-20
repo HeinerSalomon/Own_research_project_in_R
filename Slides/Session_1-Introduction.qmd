@@ -1,0 +1,252 @@
+---
+title: "Session 1: Introduction"
+author: "Heiner Salomon"
+institute: "Bremen University"
+date: "20 04 2026"
+format:
+  beamer:
+    theme: "Berlin"
+    colortheme: "beaver"
+    incremental: true
+    header-includes:
+    - \apptocmd{\tightlist}{\setlength{\itemsep}{20pt}}{}{}
+    - \logo{\includegraphics[height=1cm]{UniBremen_Logo_Pantone186.pdf}}
+toc: true
+toc-title: "Overview"
+---
+
+# Getting started
+
+## Why are we here
+
+-   Quantitative analysis skills important (in academia and beyond)
+-   Many courses teach statistics, few teach how to do the programming
+-   Manual copying of data/ results always (!) error prone
+
+## Introduction to course
+
+-   I am only a facilitator
+-   You decide what you take from it
+-   Idea is to work continuously on project
+
+## Learning goals of the course
+
+-   Learning some R
+-   Apply what you know in real research project
+-   Empower you to continue on your journey
+
+## Learning goals of today
+
+-   Introduction (you, me, course)
+-   Setting expectations
+-   Setting up R, Quarto and Github
+
+# Getting to know each other
+
+## Introduction template
+
+-   Name
+-   Background
+-   Knowledge of R with examples
+-   Article/ book you read recently
+-   What do you want to get out of this course?
+
+## My introduction
+
+-   Heiner Salomon
+-   PhD researcher in Bremen
+-   I have worked with R the past 3 years extensively
+-   Article in the guardian on 'Mythos'
+-   I hope to teach something and have a good time
+
+# Introduction to course
+
+## Meetings
+
+-   We meet every Monday 14:00-16:00
+-   First half of class: Presentation by me
+-   Second half: Class discussion
+
+## Course schedule {.plain}
+
+::::: columns
+::: {.column width="50%"}
+-   ~~April 6th:~~ Easter
+
+-   ~~April 13th:~~ Course cancelled by me
+
+-   April 20th: Course introduction & installing R and Rstudio, Quarto and Github
+
+-   [April 27th]{.underline}: Choosing a research project
+
+-   May 4th: Short introduction to Rstudio and Quarto
+
+-   [May 11th]{.underline}: Reproducible science (and git)
+:::
+
+::: {.column width="50%"}
+-   May 18th: The tidyverse: What is it and how can you use it?
+
+-   ~~May 25th~~: Whit Monday
+
+-   [June 1st]{.underline}: Good practices when coding
+
+-   June 8th: Crash course in data wrangling
+
+-   [June 15th]{.underline}: Introduction to data visualisation in ggplot
+
+-   June 22nd: More data visualisation in ggplot
+
+-   [June 29th]{.underline}: Presentations
+
+-   July 6th: Final class
+:::
+:::::
+
+## Assessment
+
+-   Progress report (Every two weeks Friday at 15:00)
+-   Final script of project
+
+::::: columns
+::: {.column width="50%"}
+### 3 Credit Points (CP)
+
+-   Short presentation (10 minutes)
+-   Short final research note with references (\~5 pages, at least one high-quality graph)
+:::
+
+::: {.column width="50%"}
+### 6 Credit Points (CP)
+
+-   Long presentation (20 minutes)
+-   Long final research note with references (\~10 pages, at least two high-quality graphs)
+:::
+:::::
+
+## Assessment - Progress report
+
+-   Simple progress report, free form (one short paragraph)
+-   I tried setting it up on StudIP, might change
+-   I expect 5 short reports:
+-   one can be dropped without explanation
+-   after that need a good excuse
+
+## Assessment - Script (each 25%)
+
+-   Correct: Is the script correct and does what it should?
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what the script does and when?
+- Comments: Are the comments in the script enough to follow it?
+
+## Assessment - Presentation criteria (each 25%)
+
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what you present on?
+-   Visuals: Does the presentation look appealing?
+-   Presentation: Are you presenting convincingly?
+
+## Assessment - Research note criteria (each 25%)
+
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what you are writing on?
+-   Visuals: Does the data sicualisation look appealing?
+-   References: Are the references correct and relevant?
+
+## Etiquette
+
+-   Attendance is not mandatory, but highly encouraged
+-   You can always contact me at heiner.salomon\@uni-bremen.de
+-   Communicate early, communicate often
+
+## Where to find help
+
+-   This introduction is great: https://r4ds.hadley.nz/intro.html
+-   Stackoverflow is your friend: https://stackoverflow.com/questions/tagged/r
+-   You can also try Large Language Models
+
+## Use of LLMs
+
+-   Large Language Models can be extremely helpful for coding
+-   But they also have limits
+-   You chose this course because you want to learn\
+-   "People go to the gym even though we have forklifts"
+
+# Any questions?
+
+# Installing R
+
+## Why R?
+
+::::: columns
+::: {.column width="50%"}
+### Pro
+
+-   free
+-   open source
+-   large community
+-   innovative
+:::
+
+::: {.column width="50%"}
+### Contra
+
+-   steeper learning curve
+-   many ways to achieve the same goal
+-   No authoratative singular guide online
+:::
+:::::
+
+## Why RStudio?
+
+-   If you use R, one should use RStudio
+-   provides a clearer interface
+-   Adds features that make programming easier
+-   Unfortunately, proprietary (but for free)
+
+## Installing R and RStudio
+
+-   Download R here: https://cran.r-project.org/mirrors.html
+-   Download RStudio here: https://posit.co/download/rstudio-desktop
+
+# Installing Quarto
+
+## Why Quarto?
+
+-   Quarto is a programme to write technical documents
+-   Same (for R-users) as RMarkdown
+-   Seamless integrates (R-)code and text with references (Zotero)
+-   Outputs PDFs, but also HTML (and other formats)
+
+## Do you need to use Quarto?
+
+-   No, but it is highly encouraged
+-   We will be working in R
+-   Adding Quarto costs little extra effort but adds a lot
+-   Very good explanatory resources here: https://quarto.org/docs/guide/
+
+## Installing Quarto
+
+-   You can download Quarto here: https://quarto.org/docs/get-started/
+
+# git
+
+## Why git?
+
+-   git is a distributed version control software system
+-   Allows to save and track progress in the cloud
+-   Enables collaboration on code with a team
+-   There are a range of providers for git (e.g. www.github.com)
+
+## Do you need to use git?
+
+-   No, but it is encouraged
+-   It costs a little bit of time to set up
+-   but once set-up, it acts as a safety net for your code
+
+## Installing and setting up git
+
+-   Great explainer on how to integrate git in R: https://happygitwithr.com/
+-   another explainer: https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/
+
+# Any questions?
