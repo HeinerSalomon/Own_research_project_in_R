@@ -5,7 +5,7 @@ format:
     suppress-bibliography: true
 ---
 
-Version: 1
+Version: 2
 
 You can find the latest version of the syllabus on the project [here](https://github.com/HeinerSalomon/Own_research_project_in_R).
 
@@ -17,19 +17,52 @@ In this course students are encouraged to run their own small-scale analysis pro
 
 ## Assessment
 
-Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include the **simple progress report every two weeks** (just about one paragraph in an unstructured form, including reasons for no progress, which will always happen, is no problem and part of the process) and the **final script** of the project. Beyond that, the two different levels encompass the following two assessments:
+Students can take the course for 3 CP or 6 CP. The final assessment will depend on the amount of CP students chose. **Both assessments** include
+
+- the **simple progress report every two weeks** every second Friday before 15:00 on StudIP. It just about one paragraph in an unstructured form, including reasons for no progress, which will always happen, is no problem and part of the process. I expect five progress reports for the duration of the course. One of the five can be dropped without explanation, but after that need a really good excuse.
+
+- the **final script** of the project. The final script should be executable from any machine as long as one has the data and R installed. Also, the script should include many comments, so that an external person can understand what it is that you have done.
+
+Beyond that, the two different levels encompass the following two assessments:
 
 3 Credit Points (CP):
 
 -   Short presentation (10 minutes)
 
--   Short final research note with references (\~5 pages, at least one high-quality graph)
+-   Short final research note with references (\~5 pages, at least one high-quality graph) by August 14 the latest
 
 6 Credit Points (CP):
 
 -   Long presentation (20 minutes)
 
--   Long final research note with references (\~10 pages, at least two high-quality graphs)
+-   Long final research note with references (\~10 pages, at least two high-quality graphs) by August 14 the latest
+
+Grading happens in the following way:
+
+The script, the presentation and the research note each contribute 33% to the final grade. The three assessments will be graded in turn in the following way:
+
+### Assessment - Script (each 25%)
+
+-   Correct: Is the script correct and does what it should?
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what the script does and when?
+- Comments: Are the comments in the script enough to follow it?
+
+### Assessment - Presentation criteria (each 25%)
+
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what you present on?
+-   Visuals: Does the presentation look appealing?
+-   Presentation: Are you presenting convincingly?
+
+### Assessment - Research note criteria (each 25%)
+
+-   Structure: Is the structure helpful and appropriate?
+-   Clarity: Does it become clear what you are writing on?
+-   Visuals: Does the data sicualisation look appealing?
+-   References: Are the references correct and relevant?
+
+
 
 ## Prerequisites
 
@@ -51,27 +84,27 @@ This is the preliminary course schedule. It may change based on student demand.
 
 ~~April 6th:~~ Easter
 
-April 13th: Introduction and installing R and Rstudio, Quarto and Github
+~~April 13th:~~ Course cancelled by me
 
-[April 20th]{.underline}: Choosing a research project
+April 20th: Course introduction & installing R and Rstudio, Quarto and Github
 
-April 27th: (Short) introduction to Rstudio and Quarto
+[April 27th]{.underline}: Choosing a research project
 
-[May 4th]{.underline}: Reproducible science (and git)
+May 4th: Short introduction to Rstudio and Quarto
 
-May 11th: The tidyverse: What is it and how can you use it?
+[May 11th]{.underline}: Reproducible science (and git)
 
-[May 18th]{.underline}: Good practices when coding
+May 18th: The tidyverse: What is it and how can you use it?
 
-~~May 25th:~~ Whit Monday
+~~May 25th~~: Whit Monday
 
-[June 1st]{.underline}: Crash course in data wrangling
+[June 1st]{.underline}: Good practices when coding
 
-June 8th: Introduction to data visualisation in ggplot
+June 8th: Crash course in data wrangling
 
-[June 15th]{.underline}: More data visualisation in ggplot
+[June 15th]{.underline}: Introduction to data visualisation in ggplot
 
-June 22nd: Presentations
+June 22nd: More data visualisation in ggplot
 
 [June 29th]{.underline}: Presentations
 
