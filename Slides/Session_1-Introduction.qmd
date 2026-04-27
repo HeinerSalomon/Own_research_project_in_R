@@ -137,7 +137,7 @@ toc-title: "Overview"
 -   Correct: Is the script correct and does what it should?
 -   Structure: Is the structure helpful and appropriate?
 -   Clarity: Does it become clear what the script does and when?
-- Comments: Are the comments in the script enough to follow it?
+-   Comments: Are the comments in the script enough to follow it?
 
 ## Assessment - Presentation criteria (each 25%)
 

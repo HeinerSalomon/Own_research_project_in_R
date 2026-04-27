@@ -1,0 +1,309 @@
+---
+title: "Session 2: Chosing research project"
+author: "Heiner Salomon"
+institute: "Bremen University"
+date: "27 04 2026"
+format:
+  beamer:
+    theme: "Berlin"
+    colortheme: "beaver"
+    incremental: true
+    header-includes:
+    - \apptocmd{\tightlist}{\setlength{\itemsep}{20pt}}{}{}
+    - \logo{\includegraphics[height=1cm]{UniBremen_Logo_Pantone186.pdf}}
+toc: true
+toc-title: "Overview"
+---
+
+## Learning goals of today
+
+-   Selecting a good research project
+-   Finding data for research project
+-   Starting the project in R
+
+# Selecting research project
+
+## Why a research project
+
+-   Intrinsic motivation pivotal
+-   Many courses teach some R, but...
+-   Passive learning less effective
+-   Active learning by doing improves learning outcomes
+
+## Learning by doing
+
+-   Learning by doing is how most people learn R
+-   I want to guide you through the process
+-   Empowering you to continue learning
+
+## Good research projects
+
+-   Aim for a SMART project
+
+::::: columns
+::: {.column width="50%"}
+-   **S** pecific
+-   **M** easurable
+-   **A** chievable
+:::
+
+::: {.column width="50%"}
+-   **R** elevant
+-   **T** imely
+:::
+:::::
+
+## Specific
+
+-   Less specific: Has population growth increased?
+-   More specific: Has population growth across countries increased the past 10 years?
+
+## Measurable
+
+-   Less measurable: How has sentiment on inflation changed?
+-   More measurable: How have people's responses to inflation questions in standard surveys changed over time?
+
+## Achievable
+
+-   Less achievable: How have consumption patterns of Germans versus non-Germans changed over the past 40 years using G-SOEP data?
+-   More achievable: What are consumption patterns of Germans versus non-Germans using G-SOEP data?
+
+## Relevant
+
+-   Less relevant: How often do people in Germany use their car?
+-   More achievable: How has car use changed in light of the recent increases in fuel costs due to the war on Iran?
+
+## Timely
+
+-   Less timely: How has the Spanish flue pandemic from 1918-20 changed population at local levels using historical data?
+-   More timely: How has the Covid-19 pandemic affected population across the ages using UN population estimates?
+
+# Where to find data
+
+## Types of data
+
+-   There are many types of data
+-   For our purposes two types are the most interesting:
+    -   Survey data
+    -   Administrative data
+
+## Survey data
+
+-   Survey data are set of questions asked to a sample of a population
+
+-   Ideally random selection allows for inference of population parameters using sample estimates
+
+-   Very expensive if done well
+
+## Survey data: Pros and Cons
+
+::::: columns
+::: {.column width="50%"}
+**PRO**
+
+-   Include wide array of questions
+-   Representative of a population
+-   Sometimes comparable, sometimes panels
+:::
+
+::: {.column width="50%"}
+**CONTRA**
+
+-   Can be quite complex
+-   Often more difficult to gain access
+:::
+:::::
+
+## Survey data: Examples
+
+-   These are some potential surveys you can use:
+
+-   European Social Survey: <https://www.europeansocialsurvey.org/>
+
+-   World Value Survey: <https://www.worldvaluessurvey.org/>
+
+-   For a range of surveys (in Germany) check out GESIS: <https://www.gesis.org/angebot/daten-finden-und-abrufen/ueberblick>
+
+## Administrative data
+
+-   Administrative data is data that is collected by governments regularly
+
+-   Huge range of potentially relevant data sets
+
+-   Data often collected more consistently (in Global North)
+
+-   Be careful of changes in definition of underlying properties (!)
+
+## Administrative data: Pros and Cons
+
+::::: columns
+::: {.column width="50%"}
+**PRO**
+
+-   Often large amounts of data (in rich countries)
+-   Contains information relevant for governments
+-   Often less complex and simpler analysis
+:::
+
+::: {.column width="50%"}
+**CONTRA**
+
+-   Often requires more data wrangling to combine
+-   May have data gaps or breaks in temporal data
+:::
+:::::
+
+## Administrative data: Examples
+
+-   These are many sources of administrative data
+
+-   I would recommend reliable sources from established institutions:
+
+-   UN population estimates: <https://population.un.org/wpp/>
+
+-   World Bank: <https://data.worldbank.org/>
+
+-   OECD: <https://www.oecd.org/en/data/datasets.html?orderBy=mostRelevant&page=0&facetTags=oecd-languages%3Aen>
+
+## Administrative data: Access through API
+
+-   Many administrative data sets are accessible without having to download them
+
+-   Usually access happening through APIs (Application Programming Interface)
+
+-   In effect, people write R-packages that allow one to access data sets directly from R
+
+-   Example: <https://www.geeksforgeeks.org/data-science/world-bank-dataset-in-r/>
+
+# Break
+
+# Quarto project
+
+## Why a "project"
+
+-   Projects are self-containing environments for us to work in
+
+-   Idea is that everything you need to work on your project is in one place
+
+-   The project becomes (more) independent from the environment it is executed in
+
+-   Enhances portability to other machines (your own or others)
+
+## Starting new project
+
+-   Create a new project in top-left corner of RStudio
+
+-   We want to create new Quarto project
+
+-   I will demonstrate in RStudio
+
+## File system
+
+-   File system is essential for reliable research
+
+-   You should have one working directory with all files used in or created by project
+
+-   Only exception could be data files due to their size
+
+-   Makes sure that research is reproducible
+
+## Reproducibility
+
+-   Reproducibility is a lofty word but matters a lot for (quantitative) science
+
+-   If your way of doing things changes the results of your calculations each time you do it that is very bad
+
+-   Reproducibility and transparency also (!!!) for your future self
+
+## Quick excursion: Referring to files
+
+-   Way to refer to your files on your machine may depend on operating system used
+
+    -   Main difference is using \\ versus / in paths
+
+-   In Windows, most files are stored on C:\\
+
+-   File location can be copied from top bar in Windows Explorer
+
+    -   Just make sure to use the correct  or /
+
+-   Use clearly identifiable folder names, such as \\data or \\output
+
+## File types
+
+-   Input files (such as data)
+
+-   R- or Quarto-scripts that do the actual computation and transformation
+
+-   Output files (such as PDF, HTML, PNG etc.)
+
+## Script header
+
+-   Each script you use should have a header with the most important information
+
+-   Name of file and purpose of script
+
+-   Data used
+
+-   Author name and contact
+
+-   Data created
+
+-   Notes
+
+## Example header
+
+```{r}
+#| echo: True
+
+#--------------------------------------------------------------------------------------
+#
+# Name: Data preparation
+# Purpose: Preparation of OAA2 data analysis
+# Data: OAA2 data, collected the in May and June 2024
+# Author: Heiner Salomon (heiner.salomon@uni-bremen.de)
+# Date created: 12/05/24
+#
+# Notes  ---------------------------------------------------------------------------------
+#
+# Preparation ----------------------------------------------------------------------------
+
+```
+
+## In Quarto: YAML header
+
+-   Metadata of your Quarto file
+
+-   starts and ends with - - -
+
+-   Possible content:
+
+    -   title: New project
+
+    -   format: pdf
+
+    -   author: Peter Peterson
+
+    -   ...
+
+-   For great overview, see: <https://charlotte.quarto.pub/cascadia/2-yaml-markdown-basics/2-yaml-markdown-basics.html#/title-slide>
+
+-   For more details, see here: <https://quarto-tdg.org/yaml>
+
+# Tasks for the week
+
+## Tasks for the week
+
+-   Research question: Please send me a draft of the **research question** you want to work on and the **data set** you want to use before Friday, so we can discuss them next week.
+
+-   Set up the research project in Quarto
+
+-   Write the progress report by Friday at 15:00
+
+## Reading for next week
+
+-   Gentzkow, M. and Shapiro, JM. (2014): Code and Data for the Social Sciences: A Practitioner’s Guide <https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf>
+
+-   We will discuss those ideas at the beginning of next week's class
+
+# Any questions?
