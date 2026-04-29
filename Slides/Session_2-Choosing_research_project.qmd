@@ -71,7 +71,7 @@ toc-title: "Overview"
 ## Relevant
 
 -   Less relevant: How often do people in Germany use their car?
--   More achievable: How has car use changed in light of the recent increases in fuel costs due to the war on Iran?
+-   More relevant: How has car use changed in light of the recent increases in fuel costs due to the war on Iran?
 
 ## Timely
 
