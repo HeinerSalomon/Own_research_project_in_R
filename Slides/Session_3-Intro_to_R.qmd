@@ -1,0 +1,290 @@
+---
+title: "Session 3: Introduction to R in Rstudio"
+author: "Heiner Salomon"
+institute: "Bremen University"
+date: "04 05 2026"
+format:
+  beamer:
+    theme: "Berlin"
+    colortheme: "beaver"
+    incremental: true
+    header-includes:
+    - \apptocmd{\tightlist}{\setlength{\itemsep}{20pt}}{}{}
+    - \logo{\includegraphics[height=1cm]{UniBremen_Logo_Pantone186.pdf}}
+toc: true
+toc-title: "Overview"
+
+echo: TRUE
+eval: FALSE
+---
+
+# Introduction
+
+## Learning goals of today
+
+-   Short repetition from last week
+-   Talking about best coding practices
+-   Discussing research questions
+-   Introduction to R in Rstudio
+
+# Short repetition from last week
+
+## Project
+
+-   Projects are useful "shells" for your work
+-   Make your work portable
+-   Simplifies pathing within projects
+
+## Rstudio
+
+-   Four different windows
+    -   Script (top left)
+    -   Temporary files ("Environment", top right)
+    -   R - Console (using R interactively, bottom left)
+    -   Files/ Plots/ Help (bottom right)
+
+## Quarto
+
+-   Introduction to header for Quarto projects (YAML)
+-   Basics of file system
+
+# Short discussion of tasks
+
+## Reading
+
+-   Did you find the text useful?
+
+-   What is your main takeaway?
+
+## Research question
+
+-   Please state your research question
+
+-   What data (and variables) do you want to use?
+
+-   Current questions?
+
+# RStudio basics
+
+## What will we learn
+
+-   Today only basics (!)
+-   What is what in R
+-   R basics
+-   Packages and help
+-   Loading data
+-   Summarizing data
+
+## What will we learn next session (tidyverse)
+
+-   Mutating variables
+-   Merging data
+
+## Basic coding best practices
+
+-   keep it simple
+-   "The computer" is stupid, so spelling matters (!)
+-   try to avoid spaces (in names!) and upper-case letters
+-   in R indentation does not matter, in Quarto it can
+
+## Terminology: What is what in R?
+
+-   Object \<- can be "anything"
+-   Functions are a (set of) operations that do something specific to an object
+-   Data frame \<- tabular data (rows and columns) loaded into R
+-   Value \<- something that has been assigned to a name
+-   List \<- number of different objects combined
+
+## Terminology: Data types in R?
+
+-   Numeric \<- any variable with free numbers
+    -   eg population, meters etc.
+-   Factor \<- specific number with specific meanings
+    -   eg sex, employment status etc.
+-   String \<- any text, delineated by ""
+
+## Assignment
+
+-   Assigning an object to name to refer to it later
+-   Using the \< followed by - like this "\<-"
+-   Gets stored in top right under "Global environment"
+
+```{r}
+# Load a data set
+iris_data <- iris
+# Assign value 2 to x
+x <- 2
+```
+
+## How to get to variables in Base R?
+
+-   We will mostly use tidyverse
+-   still this seemed quite relevant
+-   refer to next level of nesting using \$
+-   is visualised through clickable errors in "Environment"
+
+```{r}
+# Speichern der Variablen Sepal.Length von iris in y
+y <- iris$Sepal.Length
+
+```
+
+## Commenting
+
+-   Comments are essential in understanding code
+-   Comments are added by starting line with \#
+
+```{r}
+# This is a comment
+2+2
+```
+
+## Code sections
+
+-   You should try to code in sections
+-   Like headers in text, makes it easier to follow code
+-   Sections let you "jump" to code in outline and at bottom of script window
+
+## Code sections - how to
+
+-   Consist of comment \# followed by section name followed by at least four - - - -
+-   Hidden ("folded") using arrow on left next to line number
+-   Un-hidden using the blue double-arrow next to section name
+
+```{r}
+# This is a section ----
+2+2
+```
+
+## Code sections - subsections
+
+-   Can be useful at times in longer files
+-   You can use \## or \### for different subsections
+
+```{r}
+# This is a section ----
+v <- 2
+## This is a sub-section ----
+w = v + 3
+
+```
+
+## Packages
+
+-   R is built up by a whole ecosystem of "packages"
+-   packages are essentially a (set of) function(s) others wrote to simplify your life
+-   "Under the hood" is the so-called Base-R
+-   But most people use packages, especially tidyverse
+
+## Packages - how to
+
+-   First package needs to be installed using "install.packages("")"
+-   Then loaded using "library()"
+
+```{r}
+# Install the tidyverse
+install.packages("tidyverse")
+install.packages("tidylog")
+# Load the package
+library(tidyverse)
+library(tidylog)
+```
+
+## Packages - life-hack
+
+-   usually, one loads all the necessary packages at the beginning of a script
+-   if you don't want to do that you can also use the following
+-   packagename::functionname
+
+```{r}
+# Using a package without loading it
+readr::read_csv("your_data.csv")
+
+```
+
+## Help!
+
+-   if you need help with a function, type in ? followed by the function name
+-   Many tidyverse functions have own website
+-   alternative: throw your question in your search machine
+
+```{r}
+# Help me with the function summary()
+?summary()
+# Then you can use it
+summary(iris)
+```
+
+## Loading data
+
+-   loading data into R using load()
+-   often data not stored in Rdata file
+-   import from other file types necessary
+
+## Importing data - useful packages
+
+-   Excel (.xlsx) -\> readxl::read_excel()
+-   Delimited (.csv) -\> readr::read_csv()
+-   Stata (.dta) -\> haven::read_dta()
+-   SPSS (.sav) -\> haven::read_sav()
+
+## Summarizing data
+
+-   It is crucial (!!!) to understand the data one is working with
+-   Many functions can be used to get overview
+
+## Summarizing data - View()
+
+-   View(name_dataframe) to see data
+-   Alternative to clicking on data set in "Environment" on top right
+-   opens up new tab with spreadsheet view on data
+-   can be very slow and unwieldy with large data sets
+
+## Summarizing data - head()
+
+-   head(name_dataframe) to see first five rows of data
+-   good quick overview
+-   much faster than View()
+-   May not show data complexity
+
+## Summarizing data - names()
+
+-   names(name_dataframe) to see list of all variable names
+-   can be quite useful
+-   not always helpful in long data sets
+
+## Summarizing data - summary()
+
+-   summary(name_dataframe) to see distribution of variables
+-   good quick overview
+-   limited usefulness, I personally find
+
+## Summarizing data - table()
+
+-   table(name_dataframe\$variable_name) to see distribution of one variable
+-   table(name_dataframe\$variable1_name, name_dataframe\$variable2_name) to see cross-tabulation of two variables
+- only shows counts, no percentages
+
+## Summarizing data - skimr::skim()
+
+-   install skimr
+-   library(skimr) and skim(name_dataframe) or skimr::skim() to see data set
+-   split up by type of variable
+-   very good quick overview
+-   can be quite slow in large data sets
+
+# Break
+
+# Tasks for the week
+
+## Tasks for the week
+
+-   No specific tasks this week
+-   keep on working on your projects
+
+## Reading for next week
+
+-   Baker, D. (2013): How Much Unemployment Was Caused by Reinhart and Rogoff's Arithmetic Mistake? <https://cepr.net/publications/how-much-unemployment-was-caused-by-reinhart-and-rogoffs-arithmetic-mistake/>
+-   We will discuss those ideas at the beginning of next week's class
+
+# Any questions?
