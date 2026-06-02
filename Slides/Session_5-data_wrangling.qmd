@@ -1,0 +1,245 @@
+---
+title: "Session 5: Crash course in data wrangling"
+author: "Heiner Salomon"
+institute: "Bremen University"
+date: "18 05 2026"
+format:
+  beamer:
+    theme: "Berlin"
+    colortheme: "beaver"
+    incremental: true
+    header-includes:
+    - \apptocmd{\tightlist}{\setlength{\itemsep}{20pt}}{}{}
+    - \logo{\includegraphics[height=1cm]{UniBremen_Logo_Pantone186.pdf}}
+toc: true
+toc-title: "Overview"
+
+echo: TRUE
+eval: FALSE
+---
+
+# Introduction
+
+## Learning goals of today
+
+-   Short repetition from last week
+-   Discussing "replication crisis" and potential solutions
+-   Crash course in data wrangling
+
+## Repetition: Useful commands
+
+-   mutate() \[+ case_when\]: Change data and create new variables
+-   filter(): Filtering data by specific values
+-   select(): Selecting variables
+
+## Repetition: Piping in tidyverse
+
+```{r}
+# "Piped" code (as in the tidyverse)
+iris_data <- iris |>
+  filter(Species = "virginica") |>
+  mutate(Petal.Length = Petal.Length + 1)
+```
+
+## Reading - Reproducible science
+
+-   What is p-hacking
+-   What is a pre-analysis plan?
+-   What is publication bias?
+-   How can bias creep into your research?
+
+## Reading - Suggestions they provide
+
+-   Improving methodological training
+-   Encouraging collaboration and team science
+-   Promoting study pre-registration
+-   Improving the quality of reporting
+-   Promoting transparency and open science (data sharing)
+
+# Data wrangling
+
+## What will we learn today
+
+-   Some more data wrangling commands
+-   group_by()
+-   join()
+-   arrange()
+-   pivot()
+
+## Why do we need to learn data wrangling?
+
+-   Most of your time you will spend data wrangling
+-   Analysis itself will take less than 10% of your time
+-   Goal: To create clean, "tidy" data
+
+## What is tidy data?
+
+- Each variable is a column; each column is a variable.
+- Each observation is a row; each row is an observation.
+- Each value is a cell; each cell is a single value.
+-   For more information on tidy data: https://tidyr.tidyverse.org/articles/tidy-data.html
+
+
+
+## group_by() - Applying manipulation by groups of data
+
+-   Often you will need to manipulate data grouped by another variable
+-   Example: You have individuals, but you want to know how many people live in each city
+-   group_by() can be inserted before mutate operation in pipe
+-   group_by() manipulates data until ungroup() called
+
+## group_by() - Variable manipulation (code)
+
+```{r}
+# Create sums by Species
+iris_data <- iris |> 
+  group_by(Species) |>
+  mutate(sum_Sepal.Length = sum(Sepal.Length)) |>
+  ungroup() # always (!) remove grouping
+```
+
+## .by = Alternative to group_by()
+
+-   Instead of having to call group_by() and worry about ungroup()
+-   Alternative: add .by = at the end of tidyverse command
+-   Only operates on this one function
+-   I prefer .by = over group_by()
+
+## .by = Alternative to group_by() (code)
+
+```{r}
+# Create sums by Species
+iris_data <- iris |> 
+  mutate(sum_Sepal.Length = sum(Sepal.Length), .by = Species)
+```
+
+## Test: group_by() and .by = manipulate a variable by two groups and
+
+-   load your data sets
+-   use mutate() together with group_by() or .by 0 to create two new variables
+
+## join() - Combining different data sets
+
+-   join() commands necessary for comibining data sets
+-   requires key variable to join on in both data sets!
+-   left_join(a,b) join b onto a, most common version
+-   others are right_join(), inner_join(), semi_join(), anti_join(), full_join()
+
+## join() - Combining different data sets - join_by()
+
+-   key variable(s) need to be uniquely identify
+-   add join_by() after comma behind left_join()
+-   join_by(x == y) will join data set a and b using variable x from data set a and y from data set b
+-   Multiple join_by(x == y, h == j) possible
+
+## join() - Combining different data sets - type of join
+
+-   different kinds of joins possible
+-   one-to-one, many-to-one, one-to-many, many-to-many (the latter hopefully never!)
+-   relationship = "one-to-one" after comma behind left_join() to prevent errors
+
+## join() - Combining different data sets (code)
+
+```{r}
+# Check whether keys identify uniquely (duplicated(sum) has to be 0!)
+sum(duplicated(band_members_data$name))
+sum(duplicated(band_members$name))
+
+# Create sums by Species in band_members_data
+band_members_data <- band_members |>
+  left_join(band_instruments, join_by("name" == "name"), relationship = "one-to-one")
+```
+
+## Test: join() - Combining different data sets (code)
+
+-   Do you have multiple data sets you would want to use?
+-   use left_join() together with join_by() to create two new variables
+
+## arrange() - sort (multiple) variables
+
+-   arrange() sorts variables from highest to lowest
+-   can be inversed from lowest (top) to highest using desc()
+-   can take multiple variables
+
+## arrange() - sort (multiple) variables (code)
+
+```{r}
+# Sort entries by Petal.Width and Sepal.Width
+iris_data <- iris |>
+  arrange(Petal.Width, Sepal.Width)
+
+View(iris_data)
+
+```
+
+## Test: arrange() -  sort (multiple) variables
+
+-   Try to sort your data set using first one, then two, then three variables
+
+
+## pivot() - "switch columns with rows"
+
+-   Often data will not come in tidy form
+-   there are two pivot options
+-   pivot_longer() - moves data from columns into fewer variables with more rows
+-   pivot_wider() - moves data from rows into more variables with fewer rows
+
+## pivot_longer() - example - before...
+
+| Name     | Week1 | Week2 | Week3 | Week4 |
+|----------|-------|-------|-------|-------|
+| Caroline | 2     | 3     | 6     | 3     |
+| Jack     | 5     | 6     | 7     | 5     |
+| Ariana   | 3     | 4     | 3     | 7     |
+
+## pivot_longer() - example - ...and after
+
+| Name     | Week | Amount |
+|----------|------|--------|
+| Caroline | 1    | 2      |
+| Caroline | 2    | 3      |
+| Caroline | 3    | 6      |
+| Caroline | 4    | 3      |
+| Jack     | 1    | 5      |
+| Jack     | 2    | 6      |
+| Jack     | 3    | 7      |
+| Jack     | 4    | 5      |
+| Ariana   | 1    | 3      |
+| Ariana   | 2    | 4      |
+| Ariana   | 3    | 3      |
+| Ariana   | 4    | 7      |
+
+## pivot_wider() - example - before...
+
+| Name     | Week | Amount |
+|----------|------|--------|
+| Caroline | 1    | 2      |
+| Caroline | 2    | 3      |
+| Caroline | 3    | 6      |
+| Caroline | 4    | 3      |
+| Jack     | 1    | 5      |
+| Jack     | 2    | 6      |
+| Jack     | 3    | 7      |
+| Jack     | 4    | 5      |
+| Ariana   | 1    | 3      |
+| Ariana   | 2    | 4      |
+| Ariana   | 3    | 3      |
+| Ariana   | 4    | 7      |
+
+## pivot_wider() - example - ...and after
+
+| Week | Caroline | Jack | Ariana |
+|------|----------|------|--------|
+| 1    | 2        | 5    | 3      |
+| 2    | 3        | 6    | 4      |
+| 3    | 6        | 7    | 3      |
+| 4    | 3        | 5    | 7      |
+
+## pivot() - "switch columns with rows"
+
+- pivot can be quite complicated
+- for more information, see ?pivot_longer() or ?pivot_wider
+
+# Any questions?
+
+# Working on projects
