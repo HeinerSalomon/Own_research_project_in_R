@@ -181,7 +181,7 @@ ggplot(data = iris,
 ## There are many types of layers
 
 - I changed the plot entirely by using a different layer
-- Different layers are useful for different 
+- Different layers are useful for different purposes
 
 ## List of most important layers
 
