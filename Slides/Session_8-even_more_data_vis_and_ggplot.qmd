@@ -163,16 +163,15 @@ iris |> # We start off at iris data
 # Scatterplot using iris data, but only below Sepal.Length of 7
 iris |> # We start off at iris data
   mutate(Sepal.Length = # then mutate() original data
-           ifelse( 
-             Sepal.Length <=7,
-             Sepal.Length,
-             NA)) |> 
+  ifelse(
+    Sepal.Length <=7,
+    Sepal.Length,
+    NA)) |>
   ggplot(mapping = # and pipe this into ggplot()
          aes(x = Sepal.Length,
            y = Sepal.Width,
            colour = Species)) +
   geom_point()
-
 ```
 
 ## Pros and Cons of pre-processing
